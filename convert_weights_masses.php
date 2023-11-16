@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple all-in-one tool for conversion between diverse units, currencies, and measurements.">
     <link rel="stylesheet" href="style.css">
     <title>Convert weights, masses</title>
 </head>
 <body>
     <header>   
         <h1><a href="index.php">Universal converter</a></h1>
-        <a href="index.php"><img src="./images/icons8-home.gif" alt="home"></a>
+        <a href="index.php"><img src="./images/icons8-home-light.png" alt="home"></a>
     </header>
 
-    <?php
+    <h2>Convert Weight</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <label for="valeur">Value: </label>
+        <input type="text" name="valeur" id="valeur">
+        <select name="uniteInitiale">
+            <option value="kilogrammes">Kilogrammes</option>
+            <option value="grammes">Grammes</option>
+            <option value="milligrammes">Milligrammes</option>
+            <option value="tonnes">Tonnes</option>
+        </select>
+        <label for="">Convert to:</label>
+        <select name="uniteCible">
+            <option value="grammes">Grammes</option>
+            <option value="kilogrammes">Kilogrammes</option>
+            <option value="milligrammes">Milligrammes</option>
+            <option value="tonnes">Tonnes</option>
+        </select>
+        <button type="submit">Convert</button>
+
+        <?php
 
     function grammesVersKilogrammes($grammes) {
         return $grammes / 1000;
@@ -107,27 +127,9 @@
                 break;
         }
 
-        echo "$valeur $uniteInitiale équivaut à $resultat $uniteCible.";
+        echo "<p style='font-size: 1.4rem'>{$valeur} {$uniteInitiale} équivaut à {$resultat} {$uniteCible}.</p>";
     }
     ?>
-    <h2>Convert Weight</h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <label for="valeur">Value: </label>
-        <input type="text" name="valeur" id="valeur">
-        <select name="uniteInitiale">
-            <option value="grammes">Grammes</option>
-            <option value="kilogrammes">Kilogrammes</option>
-            <option value="milligrammes">Milligrammes</option>
-            <option value="tonnes">Tonnes</option>
-        </select>
-        <label for="">Convert to:</label>
-        <select name="uniteCible">
-            <option value="grammes">Grammes</option>
-            <option value="kilogrammes">Kilogrammes</option>
-            <option value="milligrammes">Milligrammes</option>
-            <option value="tonnes">Tonnes</option>
-        </select>
-        <button type="submit">Convert</button>
     </form>
     <footer>
         <p>&copy; 2023</p>

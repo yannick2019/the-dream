@@ -4,6 +4,8 @@ A simple all-in-one tool for conversion between diverse units, currencies, and m
 
 ## Preview
 
+![screen shot](./images/screen-shot.jpg)
+
 ## See it live
 
 Click [here]() to see it live.

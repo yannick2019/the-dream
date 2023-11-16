@@ -15,6 +15,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    background-image: url("./images/globe.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a:visited {
@@ -28,10 +31,11 @@ header h1 > a {
 header h1 {
     font-family: 'Lobster', sans-serif;
     font-size: 1.8rem;
+    color: #fff;
 }
 
 header {
-    height: 48px;
+    height: 56px;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -46,6 +50,7 @@ form {
     margin-right: auto;
     margin-bottom: auto;
     margin-left: auto;
+    color: #fff;
 }
 
 input, select, button {
@@ -74,18 +79,27 @@ button {
 
 h2 {
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem 0 2rem 0;
+    font-size: 1.8rem;
+    color: #fff;
 }
 
 .card {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 200px;
+    width: 240px;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    font-size: 1.2rem;
 }
 
 .card img {
-    width: 200px;
+    width: 240px;
+    height: 240px;
+}
+
+.card p {
+    padding-bottom: 0.4rem;
 }
 
 footer {
@@ -97,6 +111,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 
 .card > a {
@@ -106,6 +121,12 @@ footer {
 
 
 @media screen and (max-width: 820px){
+    body {
+        background-image: none;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,57,171,1) 58%, rgba(0,212,255,1) 100%);
+    }
+
     h2 {
         font-size: 1.8rem;
     }
@@ -114,10 +135,17 @@ footer {
     }
     .card img {
         width: 280px;
+        height: 280px;
     }
 }
 
 @media screen and (min-width: 375px) and (max-width: 631px){
+    body {
+        background-image: none;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,57,171,1) 58%, rgba(0,212,255,1) 100%);   
+    }
+
     header {
         justify-content: center;
     }
@@ -130,5 +158,6 @@ footer {
     }
     .card img {
         width: 360px;
+        height: 360px;
     }
 }

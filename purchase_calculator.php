@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple all-in-one tool for conversion between diverse units, currencies, and measurements.">
     <link rel="stylesheet" href="style.css">
     <title>Currency convert</title>
 </head>
 <body>
     <header>
         <h1><a href="index.php">Universal converter</a></h1>
-        <a href="index.php"><img src="./images/icons8-home.gif" alt="home"></a>
+        <a href="index.php"><img src="./images/icons8-home-light.png" alt="home"></a>
     </header>
     <h2>Purchase calculator | Delhaize</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -57,7 +58,7 @@
                 }
             }
 
-            echo "<h3>Résultats pour un montant de {$amount_sanitized} euros :</h3>";
+            echo "<h3>Résultats pour un montant de {$amount_sanitized} euros :</h3><br>";
 
             if (!empty($tableRows)) {
                 echo "

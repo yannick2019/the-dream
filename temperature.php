@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple all-in-one tool for conversion between diverse units, currencies, and measurements.">
     <link rel="stylesheet" href="style.css">
     <title>Temperature Converter</title>
 </head>
 <body>
     <header>
         <h1><a href="index.php">Universal converter</a></h1>
-        <a href="index.php"><img src="./images/icons8-home.gif" alt="home"></a>
+        <a href="index.php"><img src="./images/icons8-home-light.png" alt="home"></a>
     </header>
     <h2>Converter Celsius and Fahrenheit</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -26,9 +27,7 @@
             <option value="celsius">Celsius</option>            
         </select><br>
         <button type="submit">Convert</button>
-    </form>
-    
-    <section>
+
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $temperature = floatval($_POST["temperature"]);
@@ -43,10 +42,10 @@
                 $result = $temperature;
             }
 
-            echo "<p>$temperature $from_unit is equal to $result $to_unit</p>";
+            echo "<p style='font-size: 1.4rem'>$temperature $from_unit is equal to $result $to_unit</p>";
         }
         ?>
-    </section>
+    </form>
 
     <footer>
         <p>&copy; 2023</p>

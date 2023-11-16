@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple all-in-one tool for conversion between diverse units, currencies, and measurements.">
     <link rel="stylesheet" href="style.css">
     <title>Currency convert</title>
 </head>
 <body>
     <header>
         <h1><a href="index.php">Universal converter</a></h1>
-        <a href="index.php"><img src="./images/icons8-home.gif" alt="home"></a>
+        <a href="index.php"><img src="./images/icons8-home-light.png" alt="home"></a>
     </header>
 
     <h2 class="heading-currency">Currency converter</h2>
@@ -107,7 +108,7 @@
         
                     $total = $rate * $amount;
         
-                    echo "<p>{$amount} {$from} égal</p>";
+                    echo "<p style='font-size: 1.6rem'>{$amount} {$from} égal</p>";
                     echo "<p style='font-size: 2rem';>{$total} {$to}</p>";
                 }            
 
