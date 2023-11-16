@@ -15,56 +15,45 @@
 
     <h2 class="heading-currency">Currency converter</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <?php
+        $currencies = [
+            'USD' => 'Dollar américain (USD)',
+            'EUR' => 'Euro (EUR)',
+            'GBP' => 'Livre britanique (GBP)',
+            'XAF' => 'Franc CFA d\'Afrique Centrale (XAF)',
+            'UAH' => 'Hryvnia ukrainienne (UAH)',
+            'JPY' => 'Japanese Yen (JPY)',
+            'AUD' => 'Australian Dollar (AUD)',
+            'CAD' => 'Canadian Dollar (CAD)',
+            'CHF' => 'Swiss Franc (CHF)',
+            'CNY' => 'Chinese Yuan (CNY)',
+            'SEK' => 'Swedish Krona (SEK)',
+            'NZD' => 'New Zealand Dollar (NZD)',
+            'NOK' => 'Norwegian Krone (NOK)',
+            'MXN' => 'Mexican Peso (MXN)',
+            'SGD' => 'Singapore Dollar (SGD)',
+            'HKD' => 'Hong Kong Dollar (HKD)',
+            'KRW' => 'South Korean Won (KRW)',
+            'TRY' => 'Turkish Lira (TRY)',
+            'INR' => 'Indian Rupee (INR)',
+            'BAM' => 'Bosnia and Herzegovina Mark (BAM)',
+            'BRL' => 'Brazilian Real (BRL)',
+        ];
+        ?>
         <div>
             <label for="from">From</label>
             <select name="from" id="from">
-                <option value="USD">Dollar américain (USD)</option>
-                <option value="EUR">Euro (EUR)</option>
-                <option value="GBP">Livre britanique (GBP)</option>
-                <option value="XAF">Franc CFA d'Afrique Centrale (XAF)</option>
-                <option value="UAH">Hryvnia ukrainienne (UAH)</option>
-                <option value="JPY">JPY</option>
-                <option value="AUD">AUD</option>
-                <option value="CAD">CAD</option>
-                <option value="CHF">CHF</option>
-                <option value="CNY">CNY</option>
-                <option value="SEK">SEK</option>
-                <option value="NZD">NZD</option>
-                <option value="NOK">NOK</option>
-                <option value="MXN">MXN</option>
-                <option value="SGD">SGD</option>
-                <option value="HKD">HKD</option>
-                <option value="KRW">KRW</option>
-                <option value="TRY">TRY</option>
-                <option value="INR">INR</option>
-                <option value="BAM">BAM</option>
-                <option value="BRL">BRL</option>
+                <?php foreach ($currencies as $code => $label): ?>
+                    <option value="<?= $code ?>"><?= $label ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div>
             <label for="to">To</label>
             <select name="to" id="to">
-                <option value="EUR">Euro (EUR)</option>
-                <option value="USD">Dollar américain (USD)</option>
-                <option value="GBP">Livre britanique (GBP)</option>
-                <option value="XAF">Franc CFA d'Afrique Centrale (XAF)</option>
-                <option value="UAH">Hryvnia ukrainienne (UAH)</option>
-                <option value="JPY">JPY</option>
-                <option value="AUD">AUD</option>
-                <option value="CAD">CAD</option>
-                <option value="CHF">CHF</option>
-                <option value="CNY">CNY</option>
-                <option value="SEK">SEK</option>
-                <option value="NZD">NZD</option>
-                <option value="NOK">NOK</option>
-                <option value="MXN">MXN</option>
-                <option value="SGD">SGD</option>
-                <option value="HKD">HKD</option>
-                <option value="KRW">KRW</option>
-                <option value="TRY">TRY</option>
-                <option value="INR">INR</option>
-                <option value="BAM">BAM</option>
-                <option value="BRL">BRL</option>
+                <?php foreach ($currencies as $code => $label): ?>
+                    <option value="<?= $code ?>"><?= $label ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div>
