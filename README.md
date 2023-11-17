@@ -4,7 +4,7 @@ A simple all-in-one tool for conversion between diverse units, currencies, and m
 
 ## Preview
 
-![screen shot](./images/screen-shot.jpg)
+![screen shot](./images/screen-shot.jpeg)
 
 ## See it live
 
