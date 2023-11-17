@@ -38,6 +38,63 @@
             </a>
         </div>
     </main>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="white-text">Track all markets on TradingView</span></a></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+        "symbols": [
+            {
+            "description": "",
+            "proName": "OANDA:EURUSD"
+            },
+            {
+            "description": "",
+            "proName": "OANDA:GBPUSD"
+            },
+            {
+            "description": "",
+            "proName": "FX:USDJPY"
+            },
+            {
+            "description": "",
+            "proName": "FX:AUDUSD"
+            },
+            {
+            "description": "",
+            "proName": "FX:GBPJPY"
+            },
+            {
+            "description": "",
+            "proName": "FX:USDCAD"
+            },
+            {
+            "description": "",
+            "proName": "FX:USDJPY"
+            },
+            {
+            "description": "",
+            "proName": "FX:NZDUSD"
+            },
+            {
+            "description": "",
+            "proName": "FX:USDCHF"
+            },
+            {
+            "description": "",
+            "proName": "FX:GBPCAD"
+            }
+        ],
+        "showSymbolLogo": true,
+        "colorTheme": "light",
+        "isTransparent": false,
+        "displayMode": "adaptive",
+        "locale": "en"
+        }
+    </script>
+    </div>
+    <!-- TradingView Widget END -->
     <footer>
         <p>&copy; 2023</p>
     </footer>
