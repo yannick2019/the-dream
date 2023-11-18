@@ -34,102 +34,113 @@
 
         <?php
 
-    function grammesVersKilogrammes($grammes) {
-        return $grammes / 1000;
-    }
-
-    function kilogrammesVersGrammes($kilogrammes) {
-        return $kilogrammes * 1000;
-    }
-
-    function milligrammesVersGrammes($milligrammes) {
-        return $milligrammes / 1000;
-    }
-
-    function tonnesVersKilogrammes($tonnes) {
-        return $tonnes * 1000;
-    }
-
-    function kilogrammesVersTonnes($kilogrammes) {
-        return $kilogrammes / 1000;
-    }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $valeur = $_POST["valeur"];
-        $uniteInitiale = $_POST["uniteInitiale"];
-        $uniteCible = $_POST["uniteCible"];
-        $resultat = 0;
-
-        switch ($uniteInitiale) {
-            case "grammes":
-                switch ($uniteCible) {
-                    case "grammes":
-                        $resultat = $valeur;
-                        break;
-                    case "kilogrammes":
-                        $resultat = grammesVersKilogrammes($valeur);
-                        break;
-                    case "milligrammes":
-                        $resultat = milligrammesVersGrammes($valeur);
-                        break;
-                    case "tonnes":
-                        $resultat = kilogrammesVersTonnes(grammesVersKilogrammes($valeur));
-                        break;
-                }
-                break;
-            case "kilogrammes":
-                switch ($uniteCible) {
-                    case "grammes":
-                        $resultat = kilogrammesVersGrammes($valeur);
-                        break;
-                    case "kilogrammes":
-                        $resultat = $valeur;
-                        break;
-                    case "milligrammes":
-                        $resultat = kilogrammesVersGrammes(milligrammesVersGrammes($valeur));
-                        break;
-                    case "tonnes":
-                        $resultat = kilogrammesVersTonnes($valeur);
-                        break;
-                }
-                break;
-            case "milligrammes":
-                switch ($uniteCible) {
-                    case "grammes":
-                        $resultat = milligrammesVersGrammes($valeur);
-                        break;
-                    case "kilogrammes":
-                        $resultat = grammesVersKilogrammes(milligrammesVersGrammes($valeur));
-                        break;
-                    case "milligrammes":
-                        $resultat = $valeur;
-                        break;
-                    case "tonnes":
-                        $resultat = kilogrammesVersTonnes(grammesVersKilogrammes(milligrammesVersGrammes($valeur)));
-                        break;
-                }
-                break;
-            case "tonnes":
-                switch ($uniteCible) {
-                    case "grammes":
-                        $resultat = tonnesVersKilogrammes($valeur);
-                        break;
-                    case "kilogrammes":
-                        $resultat = kilogrammesVersGrammes(tonnesVersKilogrammes($valeur));
-                        break;
-                    case "milligrammes":
-                        $resultat = kilogrammesVersGrammes(milligrammesVersGrammes(tonnesVersKilogrammes($valeur)));
-                        break;
-                    case "tonnes":
-                        $resultat = $valeur;
-                        break;
-                }
-                break;
+        function grammesVersKilogrammes($grammes) {
+            return $grammes / 1000;
         }
 
-        echo "<p style='font-size: 1.4rem'>{$valeur} {$uniteInitiale} équivaut à {$resultat} {$uniteCible}.</p>";
-    }
-    ?>
+        function kilogrammesVersGrammes($kilogrammes) {
+            return $kilogrammes * 1000;
+        }
+
+        function milligrammesVersGrammes($milligrammes) {
+            return $milligrammes / 1000;
+        }
+
+        function tonnesVersKilogrammes($tonnes) {
+            return $tonnes * 1000;
+        }
+
+        function kilogrammesVersTonnes($kilogrammes) {
+            return $kilogrammes / 1000;
+        }
+
+        $error = [];
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            if (!empty($_POST["valeur"])) {
+                $valeur = $_POST["valeur"];
+                $uniteInitiale = $_POST["uniteInitiale"];
+                $uniteCible = $_POST["uniteCible"];
+                $resultat = 0;
+    
+                switch ($uniteInitiale) {
+                    case "grammes":
+                        switch ($uniteCible) {
+                            case "grammes":
+                                $resultat = $valeur;
+                                break;
+                            case "kilogrammes":
+                                $resultat = grammesVersKilogrammes($valeur);
+                                break;
+                            case "milligrammes":
+                                $resultat = milligrammesVersGrammes($valeur);
+                                break;
+                            case "tonnes":
+                                $resultat = kilogrammesVersTonnes(grammesVersKilogrammes($valeur));
+                                break;
+                        }
+                        break;
+                    case "kilogrammes":
+                        switch ($uniteCible) {
+                            case "grammes":
+                                $resultat = kilogrammesVersGrammes($valeur);
+                                break;
+                            case "kilogrammes":
+                                $resultat = $valeur;
+                                break;
+                            case "milligrammes":
+                                $resultat = kilogrammesVersGrammes(milligrammesVersGrammes($valeur));
+                                break;
+                            case "tonnes":
+                                $resultat = kilogrammesVersTonnes($valeur);
+                                break;
+                        }
+                        break;
+                    case "milligrammes":
+                        switch ($uniteCible) {
+                            case "grammes":
+                                $resultat = milligrammesVersGrammes($valeur);
+                                break;
+                            case "kilogrammes":
+                                $resultat = grammesVersKilogrammes(milligrammesVersGrammes($valeur));
+                                break;
+                            case "milligrammes":
+                                $resultat = $valeur;
+                                break;
+                            case "tonnes":
+                                $resultat = kilogrammesVersTonnes(grammesVersKilogrammes(milligrammesVersGrammes($valeur)));
+                                break;
+                        }
+                        break;
+                    case "tonnes":
+                        switch ($uniteCible) {
+                            case "grammes":
+                                $resultat = tonnesVersKilogrammes($valeur);
+                                break;
+                            case "kilogrammes":
+                                $resultat = kilogrammesVersGrammes(tonnesVersKilogrammes($valeur));
+                                break;
+                            case "milligrammes":
+                                $resultat = kilogrammesVersGrammes(milligrammesVersGrammes(tonnesVersKilogrammes($valeur)));
+                                break;
+                            case "tonnes":
+                                $resultat = $valeur;
+                                break;
+                        }
+                        break;
+                }                        
+                echo "<p style='font-size: 1.4rem'>{$valeur} {$uniteInitiale} équivaut à {$resultat} {$uniteCible}.</p>";
+
+            } else {
+                $error["error"] = "Veuillez saisir une valeur correcte!";
+            }
+        } 
+        ?>
+
+        <?php if ($error): ?>
+            <p style='color: red;'><?= $error["error"] ?></p>
+        <?php endif ?>
     </form>
     <footer>
         <p>&copy; 2023</p>
