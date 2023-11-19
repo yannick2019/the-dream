@@ -17,8 +17,8 @@
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <?php
         $currencies = [
-            'USD' => 'Dollar américain (USD)',
             'EUR' => 'Euro (EUR)',
+            'USD' => 'Dollar américain (USD)',
             'GBP' => 'Livre britanique (GBP)',
             'XAF' => 'Franc CFA d\'Afrique Centrale (XAF)',
             'UAH' => 'Hryvnia ukrainienne (UAH)',
@@ -40,26 +40,24 @@
             'BRL' => 'Brazilian Real (BRL)',
         ];
         ?>
-        <div>
-            <label for="from">From</label>
-            <select name="from" id="from">
-                <?php foreach ($currencies as $code => $label): ?>
-                    <option value="<?= $code ?>"><?= $label ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-        <div>
-            <label for="to">To</label>
-            <select name="to" id="to">
-                <?php foreach ($currencies as $code => $label): ?>
-                    <option value="<?= $code ?>"><?= $label ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-        <div>
-            <label for="amount">Montant</label>
-            <input name="amount">
-        </div>
+        
+        <label for="from">From</label>
+        <select name="from" id="from">
+            <?php foreach ($currencies as $code => $label): ?>
+                <option value="<?= $code ?>"><?= $label ?></option>
+            <?php endforeach; ?>
+        </select>
+        
+        <label for="to">To</label>
+        <select name="to" id="to">
+            <?php foreach ($currencies as $code => $label): ?>
+                <option value="<?= $code ?>"><?= $label ?></option>
+            <?php endforeach; ?>
+        </select>
+
+        <label for="amount">Montant</label>
+        <input name="amount">
+
         <button type="submit">Convertir</button>
 
         <?php 
